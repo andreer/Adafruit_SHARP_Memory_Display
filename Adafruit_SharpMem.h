@@ -46,6 +46,7 @@ public:
   void clearDisplay();
   void refresh(void);
   void clearDisplayBuffer();
+  void fillScreen(uint16_t color);
 
 private:
   Adafruit_SPIDevice *spidev = NULL;

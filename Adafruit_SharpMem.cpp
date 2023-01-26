@@ -273,5 +273,14 @@ void Adafruit_SharpMem::refresh(void) {
 */
 /**************************************************************************/
 void Adafruit_SharpMem::clearDisplayBuffer() {
-  memset(sharpmem_buffer, 0xff, (WIDTH * HEIGHT) / 8);
+  fillScreen(0xff);
+}
+
+/**************************************************************************/
+/*!
+    @brief Fills the display buffer with color without outputting to the display
+*/
+/**************************************************************************/
+void Adafruit_SharpMem::fillScreen(uint16_t color) {
+  memset(sharpmem_buffer, color ? 0xff : 0x00, (WIDTH * HEIGHT) / 8);
 }
